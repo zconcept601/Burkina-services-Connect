@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burkina Services Connect | Portail Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #f97316;
+            --whatsapp: #22c55e;
+            --bg: #f8fafc;
+        }
+
+        body { font-family: 'Inter', sans-serif; margin: 0; background: var(--bg); color: #1e293b; padding-bottom: 90px; }
+        
+        /* --- HEADER --- */
+        header { 
+            background: var(--primary); color: white; padding: 50px 20px; 
+            text-align: center; border-radius: 0 0 35px 35px;
+        }
+        .hero-badge { background: var(--accent); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase; }
+
+        .container { padding: 20px; max-width: 600px; margin: auto; }
+
+        /* --- SECTION STATS (Preuve de dynamisme) --- */
+        .stats-bar {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            background: white; padding: 20px; border-radius: 20px;
+            margin-top: -40px; box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .stat-item h3 { margin: 0; color: var(--accent); font-size: 1.2rem; }
+        .stat-item p { margin: 0; font-size: 0.7rem; color: #64748b; }
+
+        /* --- TEXTE INFORMATIF --- */
+        .about-section { margin: 40px 0; }
+        .about-section h2 { font-size: 1.3rem; border-left: 4px solid var(--accent); padding-left: 10px; }
+        .about-section p { font-size: 0.9rem; color: #475569; line-height: 1.6; }
+
+        /* --- GRILLE DE SERVICES --- */
+        .section-header { font-size: 1.1rem; font-weight: 800; margin: 30px 0 15px; display: flex; align-items: center; gap: 10px; }
+        .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .service-block {
+            position: relative; height: 150px; border-radius: 18px; overflow: hidden;
+            display: flex; align-items: flex-end; text-decoration: none;
+            background-size: cover; background-position: center; border: 1px solid #e2e8f0;
+        }
+        .overlay { background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 80%); width: 100%; padding: 12px; color: white; }
+        .overlay h3 { margin: 0; font-size: 0.8rem; }
+
+        /* --- SECTION TEMOIGNAGES (Nouveau) --- */
+        .testimonial { background: #fff; padding: 20px; border-radius: 15px; margin-top: 20px; border-italic: 1px solid #e2e8f0; }
+        .user-info { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+        .user-info img { width: 40px; height: 40px; border-radius: 50%; background: #ddd; }
+        .testimonial p { font-size: 0.85rem; font-style: italic; color: #475569; }
+
+        /* --- FAQ / ACCORDION (Nouveau) --- */
+        .faq-item { background: white; padding: 15px; border-radius: 10px; margin-bottom: 10px; font-size: 0.85rem; }
+        .faq-item strong { display: block; color: var(--primary); margin-bottom: 5px; }
+
+        /* --- NAVIGATION BASSE (FIXE) --- */
+        .bottom-nav {
+            position: fixed; bottom: 0; width: 100%; background: white;
+            display: flex; justify-content: space-around; padding: 12px 0 25px;
+            border-top: 1px solid #e2e8f0; z-index: 1000;
+        }
+        .nav-link { color: #94a3b8; text-decoration: none; text-align: center; font-size: 0.7rem; }
+        .nav-link.active { color: var(--primary); font-weight: bold; }
+        .nav-link i { display: block; font-size: 1.3rem; margin-bottom: 4px; }
+
+        /* --- FLOATING WHATSAPP --- */
+        .wa-float {
+            position: fixed; bottom: 100px; right: 20px; background: var(--whatsapp);
+            color: white; width: 55px; height: 55px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-size: 24px;
+            box-shadow: 0 10px 20px rgba(34, 197, 94, 0.3); z-index: 999;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="hero-badge">N°1 Services au Burkina</div>
+    <h1 style="margin: 15px 0 5px; font-size: 1.8rem; letter-spacing: -1px;">BURKINA SERVICES CONNECT</h1>
+    <p style="opacity: 0.8; font-size: 0.9rem;">Votre partenaire digital et de proximité.</p>
+</header>
+
+<div class="container">
+    <div class="stats-bar" data-aos="zoom-in">
+        <div class="stat-item"><h3>50+</h3><p>Partenaires</p></div>
+        <div class="stat-item"><h3>24h</h3><p>Réactivité</p></div>
+        <div class="stat-item"><h3>100%</h3><p>Fiabilité</p></div>
+    </div>
+
+    <section class="about-section" data-aos="fade-up">
+        <h2>Pourquoi nous faire confiance ?</h2>
+        <p>Burkina Services Connect n'est pas qu'une simple vitrine. Nous sélectionnons rigoureusement chaque prestataire. En collaborant avec nous, vous bénéficiez d'un suivi personnalisé et de la puissance de la plateforme <strong>Dropaffy</strong> pour sécuriser vos transactions et vos recrutements.</p>
+    </section>
+
+    <div class="section-header">🌐 Nos Solutions Digitales</div>
+    <div class="services-grid">
+        <a href="#" class="service-block" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400')">
+            <div class="overlay"><h3>Web & E-commerce</h3></div>
+        </a>
+        <a href="#" class="service-block" style="background-image: url('https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400')">
+            <div class="overlay"><h3>Publicité Facebook</h3></div>
+        </a>
+    </div>
+
+    <div class="section-header">🛠 Services de Proximité</div>
+    <div class="services-grid">
+        <a href="#" class="service-block" style="background-image: url('https://images.unsplash.com/photo-1621905252507-b354bcadcabc?w=400')">
+            <div class="overlay"><h3>Froid & Clim</h3></div>
+        </a>
+        <a href="#" class="service-block" style="background-image: url('https://images.unsplash.com/photo-1581578731522-63008803e218?w=400')">
+            <div class="overlay"><h3>Électricité / Menuiserie</h3></div>
+        </a>
+    </div>
+
+    <div class="section-header">💬 Succès Récents</div>
+    <div class="testimonial" data-aos="fade-right">
+        <div class="user-info">
+            <div class="user-img"><i class="fas fa-user-circle fa-2x"></i></div>
+            <strong>Entreprise de BTP</strong>
+        </div>
+        <p>"Nous cherchions un aide-maçon en urgence. Via Burkina Services Connect et Dropaffy, nous avons reçu 3 profils en 48h. Mission accomplie !"</p>
+    </div>
+
+    <div class="section-header">❓ Questions Fréquentes</div>
+    <div class="faq-item">
+        <strong>Est-ce payant pour les entreprises ?</strong>
+        La consultation est libre. Certains services de mise en relation premium sont facturés à partir de 500 FCFA.
+    </div>
+    <div class="faq-item">
+        <strong>Comment devenir partenaire ?</strong>
+        Contactez-nous sur WhatsApp pour obtenir le lien du formulaire Dropaffy.
+    </div>
+
+    <div style="text-align: center; margin: 40px 0; color: #94a3b8; font-size: 0.8rem;">
+        Burkina Services Connect &copy; 2026<br>
+        Partenaire technologique : Dropaffy
+    </div>
+</div>
+
+<a href="https://wa.me/226XXXXXXXX" class="wa-float"><i class="fab fa-whatsapp"></i></a>
+
+<nav class="bottom-nav">
+    <a href="#" class="nav-link active"><i class="fas fa-home"></i>Accueil</a>
+    <a href="#" class="nav-link"><i class="fas fa-briefcase"></i>Services</a>
+    <a href="#" class="nav-link"><i class="fas fa-user-tie"></i>Recrutement</a>
+    <a href="#" class="nav-link"><i class="fas fa-envelope"></i>Contact</a>
+</nav>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 800, once: true });</script>
+</body>
+</html>
