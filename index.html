@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Burkina Services Connect | Portail Pro</title>
+    <title>Burkina Services Connect | Central Pro</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
@@ -12,106 +12,160 @@
             --accent: #f97316;
             --whatsapp: #22c55e;
             --bg: #f8fafc;
+            --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
-        body { font-family: 'Inter', sans-serif; margin: 0; background: var(--bg); color: #1e293b; padding-bottom: 90px; }
+        body { font-family: 'Inter', sans-serif; margin: 0; background: var(--bg); color: #1e293b; padding-bottom: 100px; }
         
-        /* --- HEADER --- */
         header { 
-            background: var(--primary); color: white; padding: 50px 20px; 
-            text-align: center; border-radius: 0 0 35px 35px;
+            background: var(--primary); color: white; padding: 60px 20px 40px; 
+            text-align: center; border-radius: 0 0 40px 40px;
         }
-        .hero-badge { background: var(--accent); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase; }
 
         .container { padding: 20px; max-width: 600px; margin: auto; }
 
-        /* --- SECTION STATS (Preuve de dynamisme) --- */
+        /* --- STATS RAPIDES --- */
         .stats-bar {
             display: grid; grid-template-columns: repeat(3, 1fr);
             background: white; padding: 20px; border-radius: 20px;
-            margin-top: -40px; box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            text-align: center;
+            margin-top: -50px; box-shadow: var(--card-shadow);
+            text-align: center; border: 1px solid #f1f5f9;
         }
         .stat-item h3 { margin: 0; color: var(--accent); font-size: 1.2rem; }
-        .stat-item p { margin: 0; font-size: 0.7rem; color: #64748b; }
+        .stat-item p { margin: 0; font-size: 0.7rem; color: #64748b; font-weight: 600; }
 
-        /* --- TEXTE INFORMATIF --- */
-        .about-section { margin: 40px 0; }
-        .about-section h2 { font-size: 1.3rem; border-left: 4px solid var(--accent); padding-left: 10px; }
-        .about-section p { font-size: 0.9rem; color: #475569; line-height: 1.6; }
-
-        /* --- GRILLE DE SERVICES --- */
-        .section-header { font-size: 1.1rem; font-weight: 800; margin: 30px 0 15px; display: flex; align-items: center; gap: 10px; }
-        .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-        .service-block {
-            position: relative; height: 150px; border-radius: 18px; overflow: hidden;
-            display: flex; align-items: flex-end; text-decoration: none;
-            background-size: cover; background-position: center; border: 1px solid #e2e8f0;
+        /* --- SECTIONS --- */
+        .section-header { 
+            font-size: 1.2rem; font-weight: 800; margin: 40px 0 20px; 
+            display: flex; justify-content: space-between; align-items: center; 
         }
-        .overlay { background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 80%); width: 100%; padding: 12px; color: white; }
-        .overlay h3 { margin: 0; font-size: 0.8rem; }
+        
+        .btn-more { 
+            font-size: 0.75rem; color: var(--accent); text-decoration: none; 
+            font-weight: 700; border: 1px solid var(--accent); padding: 5px 12px; border-radius: 20px;
+        }
 
-        /* --- SECTION TEMOIGNAGES (Nouveau) --- */
-        .testimonial { background: #fff; padding: 20px; border-radius: 15px; margin-top: 20px; border-italic: 1px solid #e2e8f0; }
-        .user-info { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
-        .user-info img { width: 40px; height: 40px; border-radius: 50%; background: #ddd; }
-        .testimonial p { font-size: 0.85rem; font-style: italic; color: #475569; }
+        /* --- GRILLE --- */
+        .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+        
+        .service-block {
+            position: relative; height: 160px; border-radius: 20px; overflow: hidden;
+            display: flex; align-items: flex-end; text-decoration: none;
+            background-size: cover; background-position: center;
+            box-shadow: var(--card-shadow); transition: transform 0.3s ease;
+        }
+        .service-block:active { transform: scale(0.96); }
+        .overlay { 
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 70%); 
+            width: 100%; padding: 15px; color: white; 
+        }
+        .overlay h3 { margin: 0; font-size: 0.85rem; font-weight: 600; }
 
-        /* --- FAQ / ACCORDION (Nouveau) --- */
-        .faq-item { background: white; padding: 15px; border-radius: 10px; margin-bottom: 10px; font-size: 0.85rem; }
-        .faq-item strong { display: block; color: var(--primary); margin-bottom: 5px; }
+        /* --- PACKS MONÉTISATION --- */
+        .premium-box {
+            background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+            color: white; padding: 25px; border-radius: 25px; margin: 30px 0;
+            text-align: center; border: 2px solid var(--accent);
+        }
 
-        /* --- NAVIGATION BASSE (FIXE) --- */
+        /* --- NAVIGATION BASSE --- */
         .bottom-nav {
             position: fixed; bottom: 0; width: 100%; background: white;
-            display: flex; justify-content: space-around; padding: 12px 0 25px;
+            display: flex; justify-content: space-around; padding: 15px 0 30px;
             border-top: 1px solid #e2e8f0; z-index: 1000;
         }
-        .nav-link { color: #94a3b8; text-decoration: none; text-align: center; font-size: 0.7rem; }
-        .nav-link.active { color: var(--primary); font-weight: bold; }
-        .nav-link i { display: block; font-size: 1.3rem; margin-bottom: 4px; }
+        .nav-link { color: #94a3b8; text-decoration: none; text-align: center; font-size: 0.75rem; font-weight: 500; }
+        .nav-link.active { color: var(--primary); font-weight: 700; }
+        .nav-link i { display: block; font-size: 1.4rem; margin-bottom: 5px; }
 
-        /* --- FLOATING WHATSAPP --- */
+        /* --- WHATSAPP FLOATING --- */
         .wa-float {
-            position: fixed; bottom: 100px; right: 20px; background: var(--whatsapp);
-            color: white; width: 55px; height: 55px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center; font-size: 24px;
-            box-shadow: 0 10px 20px rgba(34, 197, 94, 0.3); z-index: 999;
+            position: fixed; bottom: 110px; right: 20px; background: var(--whatsapp);
+            color: white; width: 60px; height: 60px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-size: 28px;
+            box-shadow: 0 10px 20px rgba(34, 197, 94, 0.4); z-index: 999;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="hero-badge">N°1 Services au Burkina</div>
-    <h1 style="margin: 15px 0 5px; font-size: 1.8rem; letter-spacing: -1px;">BURKINA SERVICES CONNECT</h1>
-    <p style="opacity: 0.8; font-size: 0.9rem;">Votre partenaire digital et de proximité.</p>
+    <div style="font-weight: 900; font-size: 1.6rem; letter-spacing: -1px;">BURKINA SERVICES <span style="color:var(--accent)">CONNECT</span></div>
+    <p style="opacity: 0.8; font-size: 0.9rem; margin-top: 10px;">Le guichet unique de vos solutions professionnelles</p>
 </header>
 
 <div class="container">
     <div class="stats-bar" data-aos="zoom-in">
-        <div class="stat-item"><h3>50+</h3><p>Partenaires</p></div>
-        <div class="stat-item"><h3>24h</h3><p>Réactivité</p></div>
-        <div class="stat-item"><h3>100%</h3><p>Fiabilité</p></div>
+        <div class="stat-item"><h3>68 47...</h3><p>Contact Direct</p></div>
+        <div class="stat-item"><h3>Ouaga</h3><p>Siège Social</p></div>
+        <div class="stat-item"><h3>24/7</h3><p>Assistance</p></div>
     </div>
 
-    <section class="about-section" data-aos="fade-up">
-        <h2>Pourquoi nous faire confiance ?</h2>
-        <p>Burkina Services Connect n'est pas qu'une simple vitrine. Nous sélectionnons rigoureusement chaque prestataire. En collaborant avec nous, vous bénéficiez d'un suivi personnalisé et de la puissance de la plateforme <strong>Dropaffy</strong> pour sécuriser vos transactions et vos recrutements.</p>
-    </section>
-
-    <div class="section-header">🌐 Nos Solutions Digitales</div>
+    <div class="section-header" data-aos="fade-right">
+        <span>🌐 Solutions Digitales</span>
+        <a href="solutions-digitales.html" class="btn-more">Voir plus</a>
+    </div>
     <div class="services-grid">
-        <a href="#" class="service-block" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400')">
-            <div class="overlay"><h3>Web & E-commerce</h3></div>
+        <a href="web-design.html" class="service-block" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400')">
+            <div class="overlay"><h3>Création Web</h3></div>
         </a>
-        <a href="#" class="service-block" style="background-image: url('https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400')">
+        <a href="facebook-pro.html" class="service-block" style="background-image: url('https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400')">
             <div class="overlay"><h3>Publicité Facebook</h3></div>
         </a>
     </div>
 
-    <div class="section-header">🛠 Services de Proximité</div>
+    <div class="section-header" data-aos="fade-right">
+        <span>🛠 Services de Proximité</span>
+        <a href="services-proximite.html" class="btn-more">Voir plus</a>
+    </div>
     <div class="services-grid">
+        <a href="froid-clim.html" class="service-block" style="background-image: url('https://images.unsplash.com/photo-1621905252507-b354bcadcabc?w=400')">
+            <div class="overlay"><h3>Froid & Clim</h3></div>
+        </a>
+        <a href="electricite.html" class="service-block" style="background-image: url('https://images.unsplash.com/photo-1581578731522-63008803e218?w=400')">
+            <div class="overlay"><h3>Électricité Pro</h3></div>
+        </a>
+        <a href="immobilier.html" class="service-block" style="background-image: url('https://images.unsplash.com/photo-1534346738541-2f2e739958f2?w=400')">
+            <div class="overlay"><h3>Locations Villas</h3></div>
+        </a>
+        <a href="securite.html" class="service-block" style="background-image: url('https://images.unsplash.com/photo-1506784919181-17724a4b0d4b?w=400')">
+            <div class="overlay"><h3>Vidéosurveillance</h3></div>
+        </a>
+    </div>
+
+    <div id="premium" class="premium-box" data-aos="flip-up">
+        <i class="fas fa-crown" style="color: var(--accent); font-size: 2rem; margin-bottom: 10px;"></i>
+        <h2 style="margin: 0; font-size: 1.2rem;">Recrutement Premium</h2>
+        <p style="font-size: 0.8rem; opacity: 0.9;">Nous trouvons pour vous le prestataire idéal sous 48h avec garantie de remplacement.</p>
+        <div style="font-size: 1.4rem; font-weight: 800; margin: 15px 0;">À partir de 5 000 FCFA</div>
+        <a href="https://wa.me/22668478688?text=Bonjour,%20je%20souhaite%20commander%20un%20Pack%20Recrutement%20Premium" 
+           style="background: var(--accent); color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block;">
+           Commander maintenant
+        </a>
+    </div>
+
+</div>
+
+<a href="https://wa.me/22668478688" class="wa-float">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<nav class="bottom-nav">
+    <a href="#" class="nav-link active">
+        <i class="fas fa-home"></i>Accueil
+    </a>
+    <a href="#premium" class="nav-link">
+        <i class="fas fa-star"></i>Services Premium
+    </a>
+    <a href="https://wa.me/22668478688?text=Bonjour,%20j'ai%20besoin%20d'une%20assistance" class="nav-link">
+        <i class="fas fa-comment-dots"></i>Contacter
+    </a>
+</nav>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 800, once: true });</script>
+</body>
+</html>    <div class="services-grid">
         <a href="#" class="service-block" style="background-image: url('https://images.unsplash.com/photo-1621905252507-b354bcadcabc?w=400')">
             <div class="overlay"><h3>Froid & Clim</h3></div>
         </a>
